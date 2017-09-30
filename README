@@ -1,0 +1,365 @@
+
+
+Instructions:
+
+run the python files in following way
+
+python <python file name> <input file>
+
+
+Proposed Heuristic:
+
+In this proposed heuristic the sum of the manhattan distances from initial position of the robot to the box , the manhattan distances from that box to the storage and the number of boxes filled.
+by this heuristic the robot may go the nearest box and then to the nearest storage. Through this heuristic it may give shortest path comparing to the manhattan heuristic. And it may give the 
+result in the shortest time comparing to the other algorithms.
+The results of the proposed heuristic is discussed below.
+
+ 
+
+ 
+#######################################################################################################################################################################################################
+
+
+Results and analysis for various test cases ar below
+
+
+OOOOOOOO
+O   OR O
+O    B O
+O   O  O
+OOOOOBSO
+    O SO
+    OOOO
+BFS
+solution:
+
+['E', 'S', 'S', 'S', 'S', 'W', 'N', 'E', 'N', 'N', 'W',
+ 'W', 'W', 'N', 'W', 'W', 'S', 'E', 'E', 'E', 'E', 'N', 
+'E', 'S', 'S', 'S', 'W', 'N', 'E', 'N', 'W', 'W', 'W', 
+'N', 'W', 'W', 'S', 'E', 'E', 'E', 'E', 'N', 'E', 'S', 'S']
+
+time : 16.465913047460166 sec 
+
+DFS
+solution:
+
+['E', 'S', 'W', 'W', 'W', 'E', 'E', 'E', 'S', 'S', 'S', 'W',
+ 'N', 'E', 'N', 'N', 'W', 'W', 'W', 'S', 'W', 'W', 'N', 'E',
+ 'E', 'E', 'E', 'N', 'E', 'S', 'S', 'S', 'W', 'N', 'E', 'N',
+ 'W', 'W', 'W', 'S', 'W', 'W', 'N', 'E', 'E', 'E', 'E', 'N', 
+ 'E', 'S', 'S']
+
+time : 1.9493091341458504 sec
+
+Greedy
+solution:
+
+['E', 'S', 'S', 'S', 'S', 'W', 'N', 'E', 'N', 'N', 'W', 'W',
+ 'W', 'N', 'W', 'W', 'S', 'E', 'E', 'E', 'E', 'N', 'E', 'S',
+ 'S', 'S', 'W', 'N', 'E', 'N', 'W', 'W', 'W', 'N', 'W', 'W', 
+ 'S', 'E', 'E', 'E', 'E', 'N', 'E', 'S', 'S']
+ 
+ time : 0.8626056865669403 sec
+ 
+ A*
+ solution:
+ 
+ ['E', 'S', 'S', 'S', 'S', 'W', 'N', 'E', 'N', 'N', 'W', 'W',
+ 'W', 'N', 'W', 'W', 'S', 'E', 'E', 'E', 'E', 'N', 'E', 'S', 
+ 'S', 'S', 'W', 'N', 'E', 'N', 'W', 'W', 'W', 'N', 'W', 'W', 
+ 'S', 'E', 'E', 'E', 'E', 'N', 'E', 'S', 'S']
+ 
+ time : 12.803891760533523 sec
+ 
+ Greedy with own heuristic
+ solution:
+ 
+ ['E', 'S', 'S', 'S', 'S', 'W', 'N', 'E', 'N', 'N', 'W', 'W',
+ 'W', 'S', 'W', 'W', 'N', 'E', 'E', 'E', 'E', 'N', 'E', 'S', 
+ 'S', 'S', 'W', 'N', 'E', 'N', 'W', 'W', 'W', 'S', 'W', 'W', 
+ 'N', 'E', 'E', 'E', 'E', 'N', 'E', 'S', 'S']
+ 
+ time : 0.7573869077742837 sec
+ 
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+             | BFS             |          DFS              |greedy with given heuristic| A* with given heuristic| greedy with own heuristic| A* with own heuristic
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total steps  |  45             |          51               |         45                |         45             |       45                 |      45 
+Total time   |  16.59 sec      |          1.92 sec         |         0.86 sec          |        12.86 sec       |       0.74 sec           |      3.66 sec
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+As you see for the above test case BFS took more time compared to dfs but gave shortest path , where as the greedy with the given heuristic and the heuristic developed here gave the shortest path 
+ with in a fraction of seconds
+
+
+########################################################################################################################################################################################################
+
+OOOOOOOO
+O$  O  O
+O  BBB O
+OSS    O
+OOOOOOOO
+
+
+
+BFS 
+
+Solution:
+['S', 'S', 'E', 'E', 'E', 'E', 'E', 'N', 'N', 'W', 'S', 'E', 'S',
+ 'W', 'W', 'W', 'W', 'N', 'N', 'E', 'S', 'E', 'S', 'E', 'E', 'N',
+ 'W', 'W', 'W', 'N', 'W', 'W', 'S', 'E', 'S', 'E', 'E', 'N', 'W', 
+ 'S', 'W', 'N', 'E', 'E', 'E', 'E', 'S', 'W', 'W', 'W', 'N', 'N', 
+ 'W']
+ 
+ 
+ time : 21.682099070029267 sec
+ 
+
+DFS
+
+Solution:
+['E', 'S', 'W', 'S', 'E', 'E', 'E', 'E', 'E', 'N', 'N', 'W', 'S', 
+'E', 'S', 'W', 'W', 'W', 'W', 'N', 'W', 'N', 'E', 'E', 'S', 'E',
+'S', 'E', 'E', 'N', 'W', 'W', 'W', 'N', 'W', 'W', 'S', 'E', 'S', 
+'E', 'E', 'N', 'W', 'E', 'E', 'E', 'S', 'W', 'E', 'N', 'W', 'W', 
+'W', 'S', 'W', 'N', 'E', 'E', 'E', 'E', 'S', 'W', 'W', 'W', 'E',
+'E', 'E', 'N', 'W', 'W', 'W', 'N', 'W']
+
+time : 0.5791706767493106 sec
+ 
+ 
+ 
+Greedy with given heuristic
+
+solution:
+['S', 'S', 'E', 'E', 'E', 'E', 'E', 'N', 'N', 'W', 'S', 'E', 'S', 
+'W', 'W', 'W', 'W', 'N', 'N', 'E', 'S', 'E', 'S', 'E', 'E', 'N', 
+'W', 'W', 'W', 'N', 'W', 'W', 'S', 'E', 'S', 'E', 'E', 'N', 'W', 
+'E', 'E', 'E', 'S', 'W', 'N', 'W', 'W', 'S', 'W', 'N', 'E', 'N', 
+'W', 'S', 'E', 'E', 'E', 'S', 'W', 'W']
+
+time : 0.4314783131835727 sec
+
+
+
+A* with given heuristic
+
+solution:
+
+['S', 'S', 'E', 'E', 'E', 'E', 'E', 'N', 'N', 'W', 'S', 'E', 'S', 
+'W', 'W', 'W', 'W', 'N', 'N', 'E', 'S', 'E', 'S', 'E', 'E', 'N', 
+'W', 'W', 'W', 'N', 'W', 'W', 'S', 'E', 'S', 'E', 'E', 'N', 'W',
+ 'S', 'W', 'N', 'E', 'E', 'E', 'E', 'S', 'W', 'W', 'W', 'N', 'N', 
+ 'W']
+
+time : 24.977946058697345 sec
+ 
+ 
+ 
+Greedy with own heuristic
+
+solution:
+
+['S', 'E', 'S', 'E', 'E', 'E', 'E', 'N', 'N', 'W', 'S', 'E', 'S',
+ 'W', 'W', 'W', 'W', 'N', 'N', 'E', 'S', 'E', 'S', 'E', 'E', 'N',
+ 'W', 'W', 'W', 'N', 'W', 'W', 'S', 'E', 'S', 'E', 'E', 'N', 'E',
+ 'E', 'S', 'W', 'N', 'W', 'W', 'S', 'W', 'N', 'E', 'E', 'E', 'S',
+ 'W', 'W', 'N', 'N', 'W']
+
+ time : 0.8399469761147766 sec
+ 
+ 
+ 
+ A* with own heuristic
+ 
+ solution:
+ 
+ ['S', 'E', 'S', 'E', 'E', 'E', 'E', 'N', 'N', 'W', 'S', 'E', 'S', 
+ 'W', 'W', 'W', 'W', 'N', 'N', 'E', 'S', 'E', 'S', 'E', 'E', 'N', 
+ 'W', 'W', 'W', 'N', 'W', 'W', 'S', 'E', 'S', 'E', 'E', 'N', 'W', 
+ 'S', 'W', 'N', 'E', 'E', 'E', 'E', 'S', 'W', 'W', 'W', 'N', 'N',
+ 'W']
+ 
+ time : 6.94972047190942 sec
+ 
+ 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+             | BFS             |          DFS              |greedy with given heuristic| A* with given heuristic| greedy with own heuristic| A* with own heuristic
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total steps  |  53             |          73               |         60                |         53             |       57                 |      53 
+Total time   |  21.68 sec      |          0.58 sec         |         0.43 sec          |        24.97 sec       |       0.83 sec           |      6.94 sec
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Above are the results for the second test case:  in this case A* with the proposed heuristic gave the shortes path in very less time compared to other algorithms
+
+
+#######################################################################################################################################################################################################
+
+
+OOOO
+OSROO
+OBBSO
+O B O
+O S O
+OO  O
+ OOOO
+ 
+ 
+ BFS
+ 
+ Solution:
+ 
+ ['W', 'S', 'E', 'S', 'E', 'S', 'S', 'W', 'N', 'W', 'N', 'N', 'E', 'S']
+ 
+ time: 0.04840008558351933 sec
+ 
+ 
+ DFS
+ 
+ Solution:
+ 
+ ['W', 'S', 'E', 'S', 'E', 'S', 'S', 'W', 'N', 'W', 'N', 'N', 'E', 'S']
+ 
+ time: 0.03147878689308929 sec
+ 
+ 
+ Greedy
+ 
+ Solution:
+ 
+ ['W', 'S', 'E', 'S', 'E', 'S', 'S', 'W', 'N', 'W', 'N', 'N', 'E', 'S']
+ 
+ time: 0.024673160171451266 sec
+ 
+ A*
+ 
+ Solution:
+ 
+ ['W', 'S', 'E', 'S', 'E', 'S', 'S', 'W', 'N', 'W', 'N', 'N', 'E', 'S']
+ 
+ time: 0.0529713824185871 sec
+ 
+ 
+ Greedy with own heuristic
+ 
+ Solution:
+ 
+ ['W', 'S', 'E', 'S', 'E', 'S', 'S', 'W', 'N', 'W', 'N', 'N', 'E', 'S']
+ 
+ time: 0.05512755023492044 sec
+ 
+ 
+ A* with own heuristic
+ 
+ Solution:
+ 
+ ['W', 'S', 'E', 'S', 'E', 'S', 'S', 'W', 'N', 'W', 'N', 'N', 'E', 'S']
+ 
+ time: 0.040719675287916694 sec
+ 
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+             | BFS             |          DFS              |greedy with given heuristic| A* with given heuristic| greedy with own heuristic| A* with own heuristic
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total steps  |  14             |          14               |         14                |         14             |       14                 |      14 
+Total time   |  0.04 sec       |          0.03 sec         |         0.02 sec          |        0.052 sec       |       0.05 sec           |      0.04 sec
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+the above are the results for the very easy level game: For this all algorithms gave the same path , but greedy with the given heuristic gave the result in less time
+
+
+#######################################################################################################################################################################################################
+
+
+OOOOOOOO
+OR OSSSO
+O  BB  O
+O B   OO
+O  OOOO
+O  O
+O  O
+OOOO
+
+
+BFS :
+
+
+taking very long time 
+So not recorded
+
+
+DFS :
+
+Solution:
+
+['E', 'S', 'S', 'E', 'E', 'E', 'N', 'E', 'N', 'W', 'W', 'S', 'W', 'S', 
+'W', 'W', 'S', 'S', 'E', 'N', 'W', 'N', 'N', 'E', 'E', 'W', 'W', 'S', 
+'S', 'E', 'N', 'E', 'N', 'E', 'W', 'S', 'W', 'W', 'N', 'N', 'E', 'S',
+ 'S', 'W', 'N', 'E', 'E', 'E', 'N', 'E', 'E', 'S', 'W', 'S', 'W', 'W',
+ 'N', 'W', 'W', 'S', 'E', 'W', 'S', 'S', 'E', 'N', 'W', 'N', 'N', 'E', 
+ 'E', 'E', 'W', 'W', 'S', 'W', 'N', 'E', 'E', 'E', 'S', 'W', 'E', 'E', 
+ 'N', 'W', 'W', 'W', 'W', 'S', 'E', 'W', 'S', 'S', 'E', 'N', 'W', 'N',
+ 'N', 'E', 'E', 'E', 'N', 'E', 'W', 'S', 'W', 'W', 'W', 'S', 'S', 'E',
+ 'N', 'W', 'N', 'E', 'E', 'E', 'S', 'W', 'E', 'E', 'N', 'W', 'W', 'W',
+ 'W', 'S', 'S', 'E', 'N', 'W', 'N', 'E', 'E', 'W', 'W', 'S', 'E', 'E',
+ 'E', 'N']
+ 
+ time: 434.7629648373321 sec
+ 
+Greedy :
+
+Solution:
+
+['S', 'E', 'S', 'E', 'E', 'E', 'N', 'N', 'W', 'S', 'W', 'S', 'W', 'W', 
+'N', 'E', 'E', 'E', 'N', 'E', 'E', 'S', 'W', 'S', 'W', 'W', 'N', 'E', 
+'S', 'E', 'N', 'W', 'W', 'W', 'W', 'S', 'E', 'E', 'W', 'W', 'S', 'S', 
+'E', 'N', 'N', 'W', 'N', 'N', 'E', 'S', 'E', 'E', 'E', 'S', 'W', 'N', 
+'W', 'W', 'W', 'S', 'S', 'E', 'N', 'W', 'N', 'E', 'E', 'E', 'N', 'E', 
+'W', 'S', 'S', 'E', 'N', 'S', 'W', 'W', 'N', 'W', 'W', 'S', 'S', 'E', 
+'N', 'W', 'N', 'E', 'E', 'S', 'E', 'N']
+
+time: 289.5608602249015 sec
+
+A* :
+
+taking very long time
+so not recorded
+
+Greedy Heuristic:
+
+solution:
+
+['S', 'E', 'S', 'E', 'E', 'E', 'N', 'N', 'W', 'S', 'W', 'S', 'W', 'W', 
+'N', 'E', 'E', 'E', 'N', 'E', 'E', 'S', 'W', 'S', 'W', 'W', 'N', 'W', 
+'W', 'S', 'E', 'W', 'S', 'S', 'E', 'N', 'N', 'W', 'N', 'N', 'E', 'S',
+'E', 'E', 'S', 'E', 'N', 'W', 'W', 'W', 'W', 'S', 'S', 'E', 'N', 'W', 
+'N', 'E', 'E', 'E', 'S', 'W', 'N', 'W', 'W', 'S', 'S', 'E', 'N', 'W', 
+'N', 'E', 'S', 'E', 'E', 'N', 'N', 'E', 'W', 'S', 'S', 'W', 'W', 'N', 
+'E', 'S', 'E', 'N', 'S', 'E', 'N']
+
+time : 210.2937216119703 sec
+
+A* heuristic:
+
+taking very long time so not recorded
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+             | BFS             |          DFS              |greedy with given heuristic| A* with given heuristic| greedy with own heuristic| A* with own heuristic
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total steps  |  not recorded   |          142              |         92                |        not recorded    |       91                 |     not recorded 
+Total time   |  More time      |          434.7 sec        |         289.5 sec         |        More time       |       210.29 sec         |      More time
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+For the Above example: 
+greedy with the proposed heuristic gave the shortest path in less time compared to the other algorithms, but here in this case the BFS and A* coudn't able to find the 
+result. It took very large amount time. so, it was not possible to record the result. BFS and A* may find the solution or may not for this case.
+
+The BFS and A* algorithm is failed to find the result. (executed half a day but result not give, so stopped running the code) 
+
+
+
+#######################################################################################################################################################################################################
